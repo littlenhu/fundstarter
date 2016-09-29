@@ -1,8 +1,12 @@
-var fs = require("fs");
-var file_name = "public/index.html";
-var input = fs.readFileSync(file_name, "utf8");
-app.set('port', (process.env.PORT || 8080))
-var port = process.env.PORT || 8080
-app.listen(app.get('port'), function() {
-  console.log("Node app is running at :" + app.get('port'))
-})
+var fs =require("fs");
+var http= require('http');
+var options =
+{
+	host:'ec2-52-32-239-80.us-west-2.compute.amazonaws.com',
+	port:8080,
+	method: 'GET'
+};
+
+var data = fs.readFileSync('public/index.html');
+
+
